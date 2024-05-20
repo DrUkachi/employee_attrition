@@ -1,0 +1,40 @@
+2024-05-20 12:15:20,836 : INFO : Start of Prediction
+2024-05-20 12:15:20,836 : INFO : run_id:2024-05-20_121520_e35b9e98b9399a64
+2024-05-20 12:15:20,836 : INFO : Start of Preprocessing...
+2024-05-20 12:15:20,836 : INFO : Start of feature encoding...
+2024-05-20 12:15:20,841 : INFO : End of feature encoding...
+2024-05-20 12:15:20,842 : INFO : Start of Dropping Columns...
+2024-05-20 12:15:20,843 : INFO : End of Dropping Columns...
+2024-05-20 12:15:20,844 : INFO : Start of finding missing values...
+2024-05-20 12:15:20,846 : INFO : End of finding missing values...
+2024-05-20 12:15:20,847 : INFO : Start of building final prediction set...
+2024-05-20 12:15:20,871 : INFO : End of building final prediction set...
+2024-05-20 12:15:20,871 : INFO : End of Preprocessing...
+2024-05-20 12:15:20,871 : INFO : Start of Load Model
+2024-05-20 12:15:20,879 : INFO : Model File KMeans loaded
+2024-05-20 12:15:20,880 : INFO : End of Load Model
+2024-05-20 12:15:21,112 : INFO : clusters loop started
+2024-05-20 12:15:21,115 : INFO : Start of finding correct model
+2024-05-20 12:15:21,116 : INFO : End of finding correct model
+2024-05-20 12:15:21,116 : INFO : Start of Load Model
+2024-05-20 12:15:21,128 : INFO : Model File XGBoost1 loaded
+2024-05-20 12:15:21,128 : INFO : End of Load Model
+2024-05-20 12:15:21,129 : ERROR : Exception raised while Loading Model: No module named 'xgboost'
+Traceback (most recent call last):
+  File "C:\Users\UKASHI\PycharmProjects\employee_attrition\apps\core\file_operation.py", line 93, in load_model
+    return pickle.load(f)
+ModuleNotFoundError: No module named 'xgboost'
+2024-05-20 12:15:21,130 : ERROR : Unsuccessful End of Prediction
+Traceback (most recent call last):
+  File "C:\Users\UKASHI\PycharmProjects\employee_attrition\apps\core\file_operation.py", line 93, in load_model
+    return pickle.load(f)
+ModuleNotFoundError: No module named 'xgboost'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\UKASHI\PycharmProjects\employee_attrition\apps\prediction\predict_model.py", line 131, in single_predict_from_model
+    model = self.fileOperation.load_model(model_name)
+  File "C:\Users\UKASHI\PycharmProjects\employee_attrition\apps\core\file_operation.py", line 96, in load_model
+    raise Exception()
+Exception

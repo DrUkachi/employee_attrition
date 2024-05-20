@@ -1,0 +1,108 @@
+2024-05-16 18:56:31,012 : INFO : Start of Prediction
+2024-05-16 18:56:31,013 : INFO : run_id:2024-05-16_185631_0e59fcb38dc3c27e
+2024-05-16 18:56:31,013 : INFO : Start of Data Load, validation, and transformation
+2024-05-16 18:56:31,013 : INFO : data/predict_data_rejects
+2024-05-16 18:56:31,013 : INFO : data/predict_data_validation
+2024-05-16 18:56:31,014 : INFO : data/predict_data_processed
+2024-05-16 18:56:31,015 : INFO : data/predict_data_results
+2024-05-16 18:56:31,015 : INFO : End of Archiving Old Files...
+2024-05-16 18:56:31,015 : INFO : Start of Reading values From Schema...
+2024-05-16 18:56:31,016 : INFO : End of Reading values From Schema...
+2024-05-16 18:56:31,016 : INFO : Start of Validating Column Length...
+2024-05-16 18:56:31,016 : ERROR : data/predict_data/hr_employee_churn_data_predict3.csv
+NoneType: None
+2024-05-16 18:56:31,023 : INFO : End of Validating Column Length...
+2024-05-16 18:56:31,023 : INFO : Start of Validating Missing Values...
+2024-05-16 18:56:31,026 : ERROR : data/predict_data/hr_employee_churn_data_predict3.csv
+NoneType: None
+2024-05-16 18:56:31,026 : ERROR : (4, 9)
+NoneType: None
+2024-05-16 18:56:31,027 : INFO : End of Validating Missing Values...
+2024-05-16 18:56:31,028 : INFO : Start of Replacing Missing Values with NULL...
+2024-05-16 18:56:31,028 : INFO : hr_employee_churn_data_predict3.csv: We are in
+2024-05-16 18:56:31,028 : INFO : What data is here data/predict_data/hr_employee_churn_data_predict3.csv
+2024-05-16 18:56:31,034 : INFO : hr_employee_churn_data_predict3.csv: File Transformed successfully!!
+2024-05-16 18:56:31,035 : INFO : End of Replacing Missing Values with NULL...
+2024-05-16 18:56:31,035 : INFO : Start of Creating Table...
+2024-05-16 18:56:31,036 : INFO : Opened prediction database successfully
+2024-05-16 18:56:31,044 : INFO : no such table: prediction_raw_data_t
+2024-05-16 18:56:31,048 : INFO : CREATE TABLE prediction_raw_data_t column_name
+2024-05-16 18:56:31,053 : INFO : ALTER TABLE prediction_raw_data_t ADD COLUMN
+2024-05-16 18:56:31,058 : INFO : ALTER TABLE prediction_raw_data_t ADD COLUMN
+2024-05-16 18:56:31,062 : INFO : ALTER TABLE prediction_raw_data_t ADD COLUMN
+2024-05-16 18:56:31,066 : INFO : ALTER TABLE prediction_raw_data_t ADD COLUMN
+2024-05-16 18:56:31,071 : INFO : ALTER TABLE prediction_raw_data_t ADD COLUMN
+2024-05-16 18:56:31,075 : INFO : ALTER TABLE prediction_raw_data_t ADD COLUMN
+2024-05-16 18:56:31,080 : INFO : ALTER TABLE prediction_raw_data_t ADD COLUMN
+2024-05-16 18:56:31,084 : INFO : ALTER TABLE prediction_raw_data_t ADD COLUMN
+2024-05-16 18:56:31,084 : INFO : End of Creating Table...
+2024-05-16 18:56:31,086 : INFO : Opened prediction database successfully
+2024-05-16 18:56:31,086 : INFO : **Inserting data from file:** data/predict_data
+2024-05-16 18:56:31,086 : INFO : Start of Inserting Data into Table...
+2024-05-16 18:56:31,086 : INFO : **Inserting data from file:** data/predict_data/hr_employee_churn_data_predict3.csv
+2024-05-16 18:56:31,090 : INFO : Shape of Data to be inserted: (4, 9)
+2024-05-16 18:56:31,109 : INFO : What is the data path?
+2024-05-16 18:56:31,109 : INFO : End of Inserting Data into Table...
+2024-05-16 18:56:31,109 : INFO : Start of Exporting Data into CSV...
+2024-05-16 18:56:31,111 : INFO : Opened prediction database successfully
+2024-05-16 18:56:31,112 : ERROR : Exception raised while Exporting Data into CSV: No columns to parse from file 
+Traceback (most recent call last):
+  File "C:\Users\UKASHI\PycharmProjects\employee_attrition\apps\database\database_operation.py", line 225, in export_csv
+    inserted_data = pd.read_csv(self.file_from_db + self.file_name)
+  File "C:\Users\UKASHI\PycharmProjects\employee_attrition\venv\lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "C:\Users\UKASHI\PycharmProjects\employee_attrition\venv\lib\site-packages\pandas\io\parsers\readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "C:\Users\UKASHI\PycharmProjects\employee_attrition\venv\lib\site-packages\pandas\io\parsers\readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "C:\Users\UKASHI\PycharmProjects\employee_attrition\venv\lib\site-packages\pandas\io\parsers\readers.py", line 1898, in _make_engine
+    return mapping[engine](f, **self.options)
+  File "C:\Users\UKASHI\PycharmProjects\employee_attrition\venv\lib\site-packages\pandas\io\parsers\c_parser_wrapper.py", line 93, in __init__
+    self._reader = parsers.TextReader(src, **kwds)
+  File "parsers.pyx", line 581, in pandas._libs.parsers.TextReader.__cinit__
+pandas.errors.EmptyDataError: No columns to parse from file
+2024-05-16 18:56:31,115 : INFO : Start of Moving Processed Files...
+2024-05-16 18:56:31,116 : INFO : Moved the already processed file hr_employee_churn_data_predict3.csv
+2024-05-16 18:56:31,116 : INFO : End of Moving Processed Files...
+2024-05-16 18:56:31,116 : INFO : Successful End of Data Load, validation, and transformation
+2024-05-16 18:56:31,116 : INFO : Start of Preprocessing...
+2024-05-16 18:56:31,116 : INFO : Start of reading dataset...
+2024-05-16 18:56:31,120 : INFO : Shape of the just read data: (4, 9)
+2024-05-16 18:56:31,121 : INFO : End of reading dataset from data/predict_data_validation/InputFile.csv
+2024-05-16 18:56:31,121 : INFO : Start of feature encoding...
+2024-05-16 18:56:31,126 : INFO : End of feature encoding...
+2024-05-16 18:56:31,127 : INFO : This is data shape: (4, 10)
+2024-05-16 18:56:31,127 : INFO : Start of Dropping Columns...
+2024-05-16 18:56:31,129 : INFO : End of Dropping Columns...
+2024-05-16 18:56:31,129 : INFO : Start of finding missing values...
+2024-05-16 18:56:31,130 : INFO : End of finding missing values...
+2024-05-16 18:56:31,130 : INFO : Start of building final prediction set...
+2024-05-16 18:56:31,135 : INFO : End of building final prediction set...
+2024-05-16 18:56:31,135 : INFO : End of Preprocessing...
+2024-05-16 18:56:31,135 : INFO : This is the shape of the batch prediction data (4, 10)
+2024-05-16 18:56:31,135 : INFO : Start of Load Model
+2024-05-16 18:56:31,135 : INFO : Model File KMeans loaded
+2024-05-16 18:56:31,135 : INFO : End of Load Model
+2024-05-16 18:56:31,294 : INFO : clusters loop started
+2024-05-16 18:56:31,296 : INFO : Start of finding correct model
+2024-05-16 18:56:31,296 : INFO : End of finding correct model
+2024-05-16 18:56:31,297 : INFO : Start of Load Model
+2024-05-16 18:56:31,297 : INFO : Model File XGBoost1 loaded
+2024-05-16 18:56:31,297 : INFO : End of Load Model
+2024-05-16 18:56:31,383 : ERROR : Unsuccessful End of Prediction
+Traceback (most recent call last):
+  File "C:\Users\UKASHI\PycharmProjects\employee_attrition\apps\prediction\predict_model.py", line 94, in batch_predict_from_model
+    result.to_csv(self.data_path+'_results/'+'Predictions.csv', header=True, mode='a+',index=False)
+  File "C:\Users\UKASHI\PycharmProjects\employee_attrition\venv\lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\UKASHI\PycharmProjects\employee_attrition\venv\lib\site-packages\pandas\core\generic.py", line 3967, in to_csv
+    return DataFrameRenderer(formatter).to_csv(
+  File "C:\Users\UKASHI\PycharmProjects\employee_attrition\venv\lib\site-packages\pandas\io\formats\format.py", line 1014, in to_csv
+    csv_formatter.save()
+  File "C:\Users\UKASHI\PycharmProjects\employee_attrition\venv\lib\site-packages\pandas\io\formats\csvs.py", line 251, in save
+    with get_handle(
+  File "C:\Users\UKASHI\PycharmProjects\employee_attrition\venv\lib\site-packages\pandas\io\common.py", line 749, in get_handle
+    check_parent_directory(str(handle))
+  File "C:\Users\UKASHI\PycharmProjects\employee_attrition\venv\lib\site-packages\pandas\io\common.py", line 616, in check_parent_directory
+    raise OSError(rf"Cannot save file into a non-existent directory: '{parent}'")
+OSError: Cannot save file into a non-existent directory: 'data\predict_data_results'

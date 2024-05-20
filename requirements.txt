@@ -1,0 +1,11 @@
+matplotlib~=3.8.4
+numpy~=1.26.4
+pandas~=2.2.2
+scikit-learn~=1.4.2
+kneed~=0.8.5
+xgboost~=2.0.3
+itsdangerous #Various helpers to pass data to untrusted environments and to get it back safe and sound. Data is cryptographically signed to ensure that a token has not been tampered with.
+certifi #Certifi is a carefully curated collection of Root Certificates for validating the trustworthiness of SSL certificates while verifying the identity of TLS hosts.
+MarkupSafe # MarkupSafe implements a text object that escapes characters so it is safe to use in HTML and XML. Characters that have special meanings are replaced so that they display as the actual characters. This mitigates injection attacks, meaning untrusted user input can safely be displayed on a page.
+streamlit~=1.34.0
+seaborn~=0.13.2

@@ -1,0 +1,98 @@
+2024-05-15 21:57:46,767 : INFO : Start of Training
+2024-05-15 21:57:46,768 : INFO : Run_id:2024-05-15_215746_c2b80b84a5afe377
+2024-05-15 21:57:46,768 : INFO : Start of Data Load, validation, and transformation
+2024-05-15 21:57:46,768 : INFO : End of Archiving Old Files...
+2024-05-15 21:57:46,769 : INFO : Start of Reading values From Schema...
+2024-05-15 21:57:46,769 : INFO : End of Reading values From Schema...
+2024-05-15 21:57:46,770 : INFO : Start of Validating Column Length...
+2024-05-15 21:57:46,794 : INFO : End of Validating Column Length...
+2024-05-15 21:57:46,795 : INFO : Start of Validating Missing Values...
+2024-05-15 21:57:46,818 : INFO : End of Validating Missing Values...
+2024-05-15 21:57:46,819 : INFO : Start of Replacing Missing Values with NULL...
+2024-05-15 21:57:46,906 : INFO : hr_employee_churn_data.csv: File Transformed successfully!!
+2024-05-15 21:57:46,906 : INFO : End of Replacing Missing Values with NULL...
+2024-05-15 21:57:46,906 : INFO : Start of Creating Table...
+2024-05-15 21:57:46,907 : INFO : Opened training database successfully
+2024-05-15 21:57:46,907 : INFO : Tables created successfully
+2024-05-15 21:57:46,907 : INFO : Closed training database successfully
+2024-05-15 21:57:46,907 : INFO : End of Creating Table...
+2024-05-15 21:57:46,908 : INFO : Opened training database successfully
+2024-05-15 21:57:46,908 : INFO : Start of Inserting Data into Table...
+2024-05-15 21:58:59,060 : INFO : End of Inserting Data into Table...
+2024-05-15 21:58:59,060 : INFO : Start of Exporting Data into CSV...
+2024-05-15 21:58:59,061 : INFO : Opened training database successfully
+2024-05-15 21:58:59,263 : INFO : End of Exporting Data into CSV...
+2024-05-15 21:58:59,268 : INFO : Start of Moving Processed Files...
+2024-05-15 21:58:59,269 : ERROR : Exception raised while Moving Processed Files: [Errno 2] No such file or directory: 'data/train_data_processed\\hr_employee_churn_data.csv'
+Traceback (most recent call last):
+  File "C:\Users\UKASHI\AppData\Local\Programs\Python\Python310\lib\shutil.py", line 813, in move
+    os.rename(src, real_dst)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 'data/train_data\\hr_employee_churn_data.csv' -> 'data/train_data_processed\\hr_employee_churn_data.csv'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\UKASHI\PycharmProjects\employee_attrition\apps\ingestion\load_validate.py", line 262, in move_processed_files
+    shutil.move(os.path.join(self.data_path, file), os.path.join(self.data_path + '_processed', file))
+  File "C:\Users\UKASHI\AppData\Local\Programs\Python\Python310\lib\shutil.py", line 833, in move
+    copy_function(src, real_dst)
+  File "C:\Users\UKASHI\AppData\Local\Programs\Python\Python310\lib\shutil.py", line 434, in copy2
+    copyfile(src, dst, follow_symlinks=follow_symlinks)
+  File "C:\Users\UKASHI\AppData\Local\Programs\Python\Python310\lib\shutil.py", line 256, in copyfile
+    with open(dst, 'wb') as fdst:
+FileNotFoundError: [Errno 2] No such file or directory: 'data/train_data_processed\\hr_employee_churn_data.csv'
+2024-05-15 21:58:59,288 : ERROR : Unsuccessful End of Data Load, validation, and transformation
+Traceback (most recent call last):
+  File "C:\Users\UKASHI\AppData\Local\Programs\Python\Python310\lib\shutil.py", line 813, in move
+    os.rename(src, real_dst)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 'data/train_data\\hr_employee_churn_data.csv' -> 'data/train_data_processed\\hr_employee_churn_data.csv'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\UKASHI\PycharmProjects\employee_attrition\apps\ingestion\load_validate.py", line 310, in validate_data_set
+    self.move_processed_files()
+  File "C:\Users\UKASHI\PycharmProjects\employee_attrition\apps\ingestion\load_validate.py", line 267, in move_processed_files
+    raise e
+  File "C:\Users\UKASHI\PycharmProjects\employee_attrition\apps\ingestion\load_validate.py", line 262, in move_processed_files
+    shutil.move(os.path.join(self.data_path, file), os.path.join(self.data_path + '_processed', file))
+  File "C:\Users\UKASHI\AppData\Local\Programs\Python\Python310\lib\shutil.py", line 833, in move
+    copy_function(src, real_dst)
+  File "C:\Users\UKASHI\AppData\Local\Programs\Python\Python310\lib\shutil.py", line 434, in copy2
+    copyfile(src, dst, follow_symlinks=follow_symlinks)
+  File "C:\Users\UKASHI\AppData\Local\Programs\Python\Python310\lib\shutil.py", line 256, in copyfile
+    with open(dst, 'wb') as fdst:
+FileNotFoundError: [Errno 2] No such file or directory: 'data/train_data_processed\\hr_employee_churn_data.csv'
+2024-05-15 21:58:59,288 : ERROR : Unsuccessful End of Training
+Traceback (most recent call last):
+  File "C:\Users\UKASHI\AppData\Local\Programs\Python\Python310\lib\shutil.py", line 813, in move
+    os.rename(src, real_dst)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 'data/train_data\\hr_employee_churn_data.csv' -> 'data/train_data_processed\\hr_employee_churn_data.csv'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\UKASHI\PycharmProjects\employee_attrition\apps\ingestion\load_validate.py", line 310, in validate_data_set
+    self.move_processed_files()
+  File "C:\Users\UKASHI\PycharmProjects\employee_attrition\apps\ingestion\load_validate.py", line 267, in move_processed_files
+    raise e
+  File "C:\Users\UKASHI\PycharmProjects\employee_attrition\apps\ingestion\load_validate.py", line 262, in move_processed_files
+    shutil.move(os.path.join(self.data_path, file), os.path.join(self.data_path + '_processed', file))
+  File "C:\Users\UKASHI\AppData\Local\Programs\Python\Python310\lib\shutil.py", line 833, in move
+    copy_function(src, real_dst)
+  File "C:\Users\UKASHI\AppData\Local\Programs\Python\Python310\lib\shutil.py", line 434, in copy2
+    copyfile(src, dst, follow_symlinks=follow_symlinks)
+  File "C:\Users\UKASHI\AppData\Local\Programs\Python\Python310\lib\shutil.py", line 256, in copyfile
+    with open(dst, 'wb') as fdst:
+FileNotFoundError: [Errno 2] No such file or directory: 'data/train_data_processed\\hr_employee_churn_data.csv'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\UKASHI\PycharmProjects\employee_attrition\apps\training\train_model.py", line 80, in training_model
+    self.load_validate.validate_train_set()
+  File "C:\Users\UKASHI\PycharmProjects\employee_attrition\apps\ingestion\load_validate.py", line 331, in validate_train_set
+    self.validate_data_set('schema_train', 'training')
+  File "C:\Users\UKASHI\PycharmProjects\employee_attrition\apps\ingestion\load_validate.py", line 314, in validate_data_set
+    raise Exception
+Exception

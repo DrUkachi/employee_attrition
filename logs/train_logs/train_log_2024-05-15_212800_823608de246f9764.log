@@ -1,0 +1,54 @@
+2024-05-15 21:28:00,480 : INFO : Start of Training
+2024-05-15 21:28:00,480 : INFO : Run_id:2024-05-15_212800_823608de246f9764
+2024-05-15 21:28:00,480 : INFO : Start of Data Load, validation, and transformation
+2024-05-15 21:28:00,482 : INFO : End of Archiving Old Files...
+2024-05-15 21:28:00,482 : INFO : Start of Reading values From Schema...
+2024-05-15 21:28:00,495 : INFO : End of Reading values From Schema...
+2024-05-15 21:28:00,495 : INFO : Start of Validating Column Length...
+2024-05-15 21:28:00,572 : INFO : End of Validating Column Length...
+2024-05-15 21:28:00,573 : INFO : Start of Validating Missing Values...
+2024-05-15 21:28:00,622 : INFO : End of Validating Missing Values...
+2024-05-15 21:28:00,622 : INFO : Start of Replacing Missing Values with NULL...
+2024-05-15 21:28:00,729 : INFO : hr_employee_churn_data.csv: File Transformed successfully!!
+2024-05-15 21:28:00,729 : INFO : End of Replacing Missing Values with NULL...
+2024-05-15 21:28:00,730 : INFO : Start of creating table...
+2024-05-15 21:28:00,732 : INFO : Opened training database successfully
+2024-05-15 21:28:00,734 : ERROR : Unsuccessful End of Data Load, validation, and transformation
+Traceback (most recent call last):
+  File "C:\Users\UKASHI\PycharmProjects\employee_attrition\apps\database\database_operation.py", line 127, in create_table
+    cursor.execute(f"ALTER TABLE {table_name} ADD COLUMN {col_name} {data_type}")
+sqlite3.OperationalError: duplicate column name: empid
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\UKASHI\PycharmProjects\employee_attrition\apps\ingestion\load_validate.py", line 304, in validate_data_set
+    self.dbOperation.create_table(table_name, f'{table_name}_raw_data_t', column_names)
+  File "C:\Users\UKASHI\PycharmProjects\employee_attrition\apps\database\database_operation.py", line 135, in create_table
+    self.logger.exception('Exception raised while creating table: %s', e)
+TypeError: Logger.exception() takes 2 positional arguments but 3 were given
+2024-05-15 21:28:00,734 : ERROR : Unsuccessful End of Training
+Traceback (most recent call last):
+  File "C:\Users\UKASHI\PycharmProjects\employee_attrition\apps\database\database_operation.py", line 127, in create_table
+    cursor.execute(f"ALTER TABLE {table_name} ADD COLUMN {col_name} {data_type}")
+sqlite3.OperationalError: duplicate column name: empid
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\UKASHI\PycharmProjects\employee_attrition\apps\ingestion\load_validate.py", line 304, in validate_data_set
+    self.dbOperation.create_table(table_name, f'{table_name}_raw_data_t', column_names)
+  File "C:\Users\UKASHI\PycharmProjects\employee_attrition\apps\database\database_operation.py", line 135, in create_table
+    self.logger.exception('Exception raised while creating table: %s', e)
+TypeError: Logger.exception() takes 2 positional arguments but 3 were given
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\UKASHI\PycharmProjects\employee_attrition\apps\training\train_model.py", line 80, in training_model
+    self.load_validate.validate_train_set()
+  File "C:\Users\UKASHI\PycharmProjects\employee_attrition\apps\ingestion\load_validate.py", line 331, in validate_train_set
+    self.validate_data_set('schema_train', 'training')
+  File "C:\Users\UKASHI\PycharmProjects\employee_attrition\apps\ingestion\load_validate.py", line 314, in validate_data_set
+    raise Exception
+Exception

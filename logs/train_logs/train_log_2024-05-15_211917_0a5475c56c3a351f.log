@@ -1,0 +1,7 @@
+2024-05-15 21:19:17,064 : INFO : Start of Training
+2024-05-15 21:19:17,065 : INFO : Run_id:2024-05-15_211917_0a5475c56c3a351f
+2024-05-15 21:19:17,065 : ERROR : Unsuccessful End of Training
+Traceback (most recent call last):
+  File "C:\Users\UKASHI\PycharmProjects\employee_attrition\apps\training\train_model.py", line 82, in training_model
+    self.loadValidate.validate_train_set()
+AttributeError: 'NoneType' object has no attribute 'validate_train_set'
