@@ -92,13 +92,13 @@ def show_predict_page():
 
     with st.form(key="employee_attribute"):
         satisfaction_level = st.slider(label="Satisfaction Level", 
-                                        min_value=0,
-                                        max_value=1,
+                                        min_value=0.0,
+                                        max_value=1.0,
                                         step=0.01)
 
         last_evaluation = st.text_input(label="Last Evaluation",
-                                        min_value=0,
-                                        max_value=1,
+                                        min_value=0.0,
+                                        max_value=1.0,
                                         step=0.01)
                                         
         number_project = st.text_input(label="Number of Projects")
