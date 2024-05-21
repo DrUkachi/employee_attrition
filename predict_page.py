@@ -2,8 +2,6 @@ import pandas as pd
 import traceback
 
 from wsgiref import simple_server
-from flask import Flask, request, render_template
-from flask import Response
 
 from apps.prediction.predict_model import PredictModel
 from apps.core.config import Config
