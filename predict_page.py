@@ -91,8 +91,16 @@ def show_predict_page():
     binary_options = ["0", "1"]
 
     with st.form(key="employee_attribute"):
-        satisfaction_level = st.text_input(label="Satisfaction Level (between 0 and 1)")
-        last_evaluation = st.text_input(label="Last Evaluation (between 0 and 1)")
+        satisfaction_level = st.slider(label="Satisfaction Level", 
+                                        min_value=0,
+                                        max_value=1,
+                                        step=0.01)
+
+        last_evaluation = st.text_input(label="Last Evaluation",
+                                        min_value=0,
+                                        max_value=1,
+                                        step=0.01)
+                                        
         number_project = st.text_input(label="Number of Projects")
         average_monthly_hours = st.text_input(label="Average Monthly Hours")
         time_spend_company = st.text_input(label="Years Spent in the Company")
