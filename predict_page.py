@@ -94,11 +94,13 @@ def show_predict_page():
         satisfaction_level = st.slider(label="Satisfaction Level", 
                                         min_value=0.0,
                                         max_value=1.0,
+                                        value=0.5
                                         step=0.01)
 
-        last_evaluation = st.text_input(label="Last Evaluation",
+        last_evaluation = st.slider(label="Last Evaluation",
                                         min_value=0.0,
                                         max_value=1.0,
+                                        value=0.5
                                         step=0.01)
                                         
         number_project = st.text_input(label="Number of Projects")
