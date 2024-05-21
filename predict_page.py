@@ -96,9 +96,9 @@ def show_predict_page():
         number_project = st.text_input(label="Number of Projects")
         average_monthly_hours = st.text_input(label="Average Monthly Hours")
         time_spend_company = st.text_input(label="Years Spent in the Company")
-        work_accident = st.selectbox(label="Work Accident", options=salary_options, index=None)
+        work_accident = st.selectbox(label="Work Accident", options=binary_options, index=None)
         promotion_last_5years = st.selectbox(label="Promotion in the Last 5 years", options=binary_options, index=None)
-        salary = st.selectbox(label="Salary", options=binary_options, index=None)
+        salary = st.selectbox(label="Salary", options=salary_options, index=None)
 
         submit_button = st.form_submit_button(label="Submit Employee Information")
 
