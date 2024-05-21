@@ -88,16 +88,17 @@ def show_predict_page():
     st.write("""### Please provide the information on the attributes of the employee""")
 
     salary_options = ['low', 'high']
+    binary_options = ["0", "1"]
 
     with st.form(key="employee_attribute"):
-        satisfaction_level = st.text_input(label="Satisfaction Level")
-        last_evaluation = st.text_input(label="Last Evaluation")
+        satisfaction_level = st.text_input(label="Satisfaction Level (between 0 and 1)")
+        last_evaluation = st.text_input(label="Last Evaluation (between 0 and 1)")
         number_project = st.text_input(label="Number of Projects")
         average_monthly_hours = st.text_input(label="Average Monthly Hours")
         time_spend_company = st.text_input(label="Years Spent in the Company")
-        work_accident = st.text_input(label="Work Accident")
-        promotion_last_5years = st.text_input(label="Promotion in the Last 5 years")
-        salary = st.selectbox(label="Salary", options=salary_options, index=None)
+        work_accident = st.selectbox(label="Work Accident", options=salary_options, index=None)
+        promotion_last_5years = st.selectbox(label="Promotion in the Last 5 years", options=binary_options, index=None)
+        salary = st.selectbox(label="Salary", options=binary_options, index=None)
 
         submit_button = st.form_submit_button(label="Submit Employee Information")
 
